@@ -1,0 +1,22 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /sistema/
+
+
+#RedireccionIndex
+#RewriteRule ^error/$ error/404.php [L]
+
+###USUARIOS
+RewriteRule ^principal$ usuarios/inicio/inicio.php [L]
+RewriteRule ^balance$ usuarios/balance/balance.php [L]
+RewriteRule ^mi-perfil$ usuarios/perfil/perfil.php [L]
+RewriteRule ^logout$ componentes/logout.php [L]
+
+###ADMINISTRADOR
+RewriteRule ^admin/dashboard$ administrador/inicio/inicio.php [L]
+RewriteRule ^admin/lista-usuarios$ administrador/usuarios/listado_usuarios.php [L]
+RewriteRule ^admin/usuario-nuevo$ administrador/usuarios/nuevo_usuario.php [L]
+RewriteRule ^admin/usuario-balance-(.+)$ administrador/usuarios/balance_usuario.php?id=$1 [L]
+RewriteRule ^admin/usuario-perfil-(.+)$ administrador/usuarios/perfil_usuario.php?id=$1 [L]
+RewriteRule ^admin/balance-general$ administrador/balance/balance_general.php [L]
+RewriteRule ^admin/mi-perfil$ administrador/perfil/perfil.php [L]
